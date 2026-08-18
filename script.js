@@ -15,31 +15,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const cookies = document.cookie.split("; ");
 
-    const fontCookie = cookies.find(cookie =>
-        cookie.startsWith("fontcolor=")
+    const fontsizecookie = cookies.find(cookie =>
+        cookie.startsWith("fontsize=")
     );
 
-    if (fontCookie) {
-        const fontcolor = fontCookie.split("=")[1];
+    if (fontsizecookie) {
+        const fontsize = fontsizecookie.split("=")[1];
 
         document.documentElement.style.setProperty(
-            "--fontcolor",
-            fontcolor
+            "--fontsize",
+            `${fontsize}px`
         );
     }
 
-	const fontsizecookie = cookies.find(cookie =>
-    cookie.startsWith("fontsize=")
-);
-
-if (fontsizecookie) {
-    const fontsize = fontsizecookie.split("=")[1];
-
-    document.documentElement.style.setProperty(
-        "--fontsize",
-        `${fontsize}px`
-    );
-}
 });
-
-					  
