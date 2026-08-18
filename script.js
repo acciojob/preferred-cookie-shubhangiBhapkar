@@ -28,4 +28,13 @@ document.addEventListener("DOMContentLoaded", () => {
         );
     }
 
+	consr fontcolorcookie = cookies.find(cookie => cookie.startWith("fontcolor="))
+
+	if(fontcolorcookie)
+		const fontsize = fontsizecookie.split("=")[1];
+
+	document.documentElement.style.setProperty(
+		"--fontcolor",
+		`${fontsize}px`
+	);
 });
