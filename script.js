@@ -10,7 +10,6 @@ form.addEventListener("submit",function(e){
 	document.cookie = `fontsize=${fontsize}`;
 
 }
-
 document.addEventListener("DOMContentLoaded", () => {
 
     const cookies = document.cookie.split("; ");
@@ -21,20 +20,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (fontsizecookie) {
         const fontsize = fontsizecookie.split("=")[1];
-
         document.documentElement.style.setProperty(
             "--fontsize",
             `${fontsize}px`
         );
     }
 
-	consr fontcolorcookie = cookies.find(cookie => cookie.startWith("fontcolor="))
+    const fontcolorcookie = cookies.find(cookie =>
+        cookie.startsWith("fontcolor=")
+    );
 
-	if(fontcolorcookie)
-		const fontsize = fontsizecookie.split("=")[1];
+    if (fontcolorcookie) {
+        const fontcolor = fontcolorcookie.split("=")[1];
+        document.documentElement.style.setProperty(
+            "--fontcolor",
+            fontcolor
+        );
+    }
 
-	document.documentElement.style.setProperty(
-		"--fontcolor",
-		`${fontsize}px`
-	);
 });
