@@ -9,7 +9,7 @@ form.addEventListener("submit",function(e){
 	document.cookie = `fontcolor=${fontcolor}`;
 	document.cookie = `fontsize=${fontsize}`;
 
-}
+});
 document.addEventListener("DOMContentLoaded", () => {
 
     const cookies = document.cookie.split("; ");
