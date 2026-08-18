@@ -20,10 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (fontsizecookie) {
         const fontsize = fontsizecookie.split("=")[1];
-        document.documentElement.style.setProperty(
-            "--fontsize",
-            `${fontsize}px`
-        );
+        document.documentElement.style.setProperty("--fontsize", `${fontsize}px`);
     }
 
     const fontcolorcookie = cookies.find(cookie =>
