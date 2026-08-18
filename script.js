@@ -37,7 +37,7 @@ if (fontsizecookie) {
 
     document.documentElement.style.setProperty(
         "--fontsize",
-        fontsize
+        `${fontsize}px`
     );
 }
 });
