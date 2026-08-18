@@ -28,19 +28,18 @@ document.addEventListener("DOMContentLoaded", () => {
         );
     }
 
-	
-    const fontsize = cookies.find(cookie =>
-        cookie.startsWith("fontsize=")
+	const fontsizecookie = cookies.find(cookie =>
+    cookie.startsWith("fontsize=")
+);
+
+if (fontsizecookie) {
+    const fontsize = fontsizecookie.split("=")[1];
+
+    document.documentElement.style.setProperty(
+        "--fontsize",
+        fontsize
     );
-
-    if (fontsize) {
-        const fontsize = fontCookie.split("=")[1];
-
-        document.documentElement.style.setProperty(
-            "--fontsize",
-            fontsize
-        );
-    }
+}
 });
 
 					  
